@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="19px" height="25px" viewBox="0 0 19 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Page 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="iPad-Copy-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-364.000000, -640.000000)">
+        <g id="Spotify" transform="translate(8.000000, 417.000000)" fill="#FFFFFF">
+            <g id="vol-up" transform="translate(275.000000, 157.000000)">
+                <g id="Page-1" transform="translate(81.000000, 66.000000)">
+                    <path d="M3,0 C1.34999996,0 0,1.40624996 0,3.125 L0,21.875 C0,23.5937506 1.34999996,25 3,25 C4.64999985,25 6,23.5937506 6,21.875 L6,3.125 C6,1.40624996 4.64999985,0 3,0 Z M16,0 C14.3499994,0 13,1.40624996 13,3.125 L13,21.875 C13,23.5937506 14.3499994,25 16,25 C17.6500006,25 19,23.5937506 19,21.875 L19,3.125 C19,1.40624996 17.6500006,0 16,0 Z" id="Fill-2"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
