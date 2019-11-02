@@ -18,9 +18,9 @@ export default {
 
   data() {
     return {
-      address: 'e19.duckdns.org',
+      address: '',
       port: 443,
-      password: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIzOWZmNDg3YWVlMjc0ZDNiOWUwN2IxNTMzODRlYmU1ZCIsImlhdCI6MTU0OTY2NTYxNSwiZXhwIjoxODY1MDI1NjE1fQ.5Z9heZokl3XrldhmbSesOknzf2ZG7hoBe6iMsQAEcwE',
+      password: '',
       error: null,
     };
   },
