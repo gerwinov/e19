@@ -1,16 +1,20 @@
 <template>
   <button
-    class="button"
-    :class="[{ 'button-large' : large },{ 'button-on' : switchOn }]"
+    class="switcher"
+    :class="[{ 'switcher--large' : large },{ 'switcher--on' : switchOn }]"
     @click="flipSwitch">
-    <img class="button-img" alt="button icon" :src="require(`../assets/icons/${iconName}.svg`)" />
+    <img
+      class="switcher__img"
+      alt="switcher icon"
+      :class="{ 'switcher__img--large' : large }"
+      :src="require(`../assets/icons/${iconName}.svg`)" />
     <span v-if="large">{{ switcher.attributes.friendly_name }}</span>
   </button>
 </template>
 
 <script>
 export default {
-  name: 'Button',
+  name: 'Switcher',
 
   props: {
     large: {
@@ -48,8 +52,8 @@ export default {
 };
 </script>
 
-<style scoped>
-  .button {
+<style lang="scss" scoped>
+  .switcher {
     background-color: rgba(0, 0, 0, .3);
     opacity: 0.5;
     border-radius: 15px;
@@ -59,24 +63,24 @@ export default {
     color: white;
     margin: 10px;
     outline: none;
-  }
 
-  .button-on {
-    background-color: rgba(255, 255, 255, .3);
-    opacity: 1;
-  }
+    &__img {
+      margin: 5px;
+      height: 40px;
 
-  .button-img {
-    margin: 5px;
-    height: 40px;
-  }
+      &--large {
+        height: 65px;
+      }
+    }
 
-  .button-large {
-    width: 120px;
-    height: 120px;
-  }
+    &--on {
+      background-color: rgba(255, 255, 255, .3);
+      opacity: 1;
+    }
 
-  .button-large .button-img {
-    height: 65px;
+    &--large {
+      width: 120px;
+      height: 120px;
+    }
   }
 </style>

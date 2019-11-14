@@ -4,11 +4,11 @@
       <Login />
     </div>
     <div class="cols" v-else>
-      <div class="col col-left">
+      <div class="col col--left">
         test
       </div>
-      <div class="col col-right">
-        <Button
+      <div class="col col--right">
+        <Switcher
           large
           icon-name="power"
           :switcher="switcher"
@@ -22,14 +22,14 @@
 <script>
 import { mapGetters } from 'vuex';
 
-import Button from './components/Button.vue';
+import Switcher from './components/Switcher.vue';
 import Login from './components/Login.vue';
 
 export default {
   name: 'app',
 
   components: {
-    Button,
+    Switcher,
     Login,
   },
 
@@ -42,7 +42,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono|Karla&display=swap');
 
 * {
@@ -78,16 +78,17 @@ body {
 .col {
   display: flex;
   align-items: flex-start;
+
+  &--left {
+    width: 55%;
+  }
+
+  &--right {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    width: 45%;
+  }
 }
 
-.col-left {
-  width: 55%;
-}
-
-.col-right {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  width: 45%;
-}
 </style>
