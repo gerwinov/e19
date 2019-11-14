@@ -1,6 +1,6 @@
 <template>
   <button
-    class="switcher"
+    class="switcher font-small m-10"
     :class="[{ 'switcher--large' : large },{ 'switcher--on' : switchOn }]"
     @click="flipSwitch">
     <img
@@ -58,10 +58,6 @@ export default {
     opacity: 0.5;
     border-radius: 15px;
     border: unset;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 14px;
-    color: white;
-    margin: 10px;
     outline: none;
 
     &__img {

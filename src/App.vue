@@ -4,10 +4,10 @@
       <Login />
     </div>
     <div class="cols" v-else>
-      <div class="col col--left">
-        test
+      <div class="col col__45">
+        <Timer />
       </div>
-      <div class="col col--right">
+      <div class="col col__55 col__end">
         <Switcher
           large
           icon-name="power"
@@ -22,15 +22,17 @@
 <script>
 import { mapGetters } from 'vuex';
 
-import Switcher from './components/Switcher.vue';
 import Login from './components/Login.vue';
+import Switcher from './components/Switcher.vue';
+import Timer from './components/Timer.vue';
 
 export default {
   name: 'app',
 
   components: {
-    Switcher,
     Login,
+    Switcher,
+    Timer,
   },
 
   computed: {
@@ -57,6 +59,10 @@ body {
   overflow: hidden;
 }
 
+h1 {
+  margin: 0;
+}
+
 #app {
   background-image: url('./assets/bg.jpg');
   width: 100%;
@@ -77,18 +83,41 @@ body {
 
 .col {
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-start;
 
-  &--left {
+  &__55 {
     width: 55%;
   }
 
-  &--right {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
+  &__45 {
     width: 45%;
   }
+
+  &__end {
+    justify-content: flex-end;
+  }
+}
+
+.font-large {
+  font-family: 'Karla', sans-serif;
+  color: white;
+  font-size: 60px;
+  line-height: .7em;
+}
+
+.font-small {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
+  color: white;
+}
+
+.m-10 {
+  margin: 10px;
+}
+
+.w-100 {
+  width: 100%;
 }
 
 </style>
