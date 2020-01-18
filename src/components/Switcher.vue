@@ -2,13 +2,13 @@
   <button
     class="switcher font-small m-10"
     :class="[{ 'switcher--large' : large },{ 'switcher--on' : switchOn }]"
-    @click="flipSwitch">
+    @click="toggleSwitcher">
     <img
       class="switcher__img"
       alt="switcher icon"
       :class="{ 'switcher__img--large' : large }"
       :src="require(`../assets/icons/${iconName}.svg`)" />
-    <span v-if="large">{{ switcher.attributes.friendly_name }}</span>
+    <span class="switcher__name" v-if="large">{{ switcher.attributes.friendly_name }}</span>
   </button>
 </template>
 
@@ -30,6 +30,10 @@ export default {
       type: Object,
       required: true,
     },
+    cbType: {
+      type: String,
+      required: true,
+    },
   },
 
   computed: {
@@ -39,11 +43,11 @@ export default {
   },
 
   methods: {
-    flipSwitch() {
+    toggleSwitcher() {
       const action = this.switchOn ? 'turn_off' : 'turn_on';
 
       this.$store.dispatch({
-        type: 'flipSwitch',
+        type: this.cbType,
         id: this.switcher.entity_id,
         action,
       });
@@ -67,6 +71,10 @@ export default {
       &--large {
         height: 65px;
       }
+    }
+
+    &__name {
+      display: block;
     }
 
     &--on {

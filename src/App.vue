@@ -8,12 +8,24 @@
         <Timer />
       </div>
       <div class="col col__55 col__end">
-        <Switcher
-          large
-          icon-name="power"
-          :switcher="switcher"
-          :key="`sw${index}`"
-          v-for="(switcher, index) in switches" />
+        <div class="col col__end">
+          <Switcher
+            large
+            icon-name="power"
+            cbType="flipSwitch"
+            :switcher="switcher"
+            :key="`sw${index}`"
+            v-for="(switcher, index) in switches" />
+        </div>
+        <div class="col col__end">
+          <Switcher
+            large
+            icon-name="light"
+            cbType="toggleLight"
+            :switcher="light"
+            :key="`l${index}`"
+            v-for="(light, index) in lights" />
+        </div>
       </div>
     </div>
   </div>
@@ -39,6 +51,7 @@ export default {
     ...mapGetters({
       isLoggedIn: 'isLoggedIn',
       switches: 'getSwitches',
+      lights: 'getLivingroomLights',
     }),
   },
 };

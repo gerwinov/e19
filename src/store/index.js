@@ -130,7 +130,12 @@ const createStore = () => new Vuex.Store({
 
     getSwitches: (state, getters) => getters.getGroupedEntities('switches'),
 
-    getLights: (state, getters) => getters.getGroupedEntities('lights'),
+    getLivingroomLights: (state, getters) => {
+      const lights = getters.getGroupedEntities('lights');
+      const livingRoomEntities = ['light.keuken', 'light.tafellamp'];
+
+      return lights.filter(light => livingRoomEntities.includes(light.entity_id));
+    },
 
     getTrackers: (state, getters) => getters.getGroupedEntities('devices'),
 
