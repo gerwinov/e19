@@ -2,8 +2,12 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 
 import {
-  Auth, createConnection, subscribeEntities, callService,
+  Auth, createConnection, subscribeEntities, callService, subscribeServices,
 } from 'home-assistant-js-websocket';
+
+
+// conn is the connection from earlier.
+
 
 Vue.use(Vuex);
 
@@ -32,6 +36,7 @@ const createStore = () => new Vuex.Store({
       if (payload.id && payload.action && payload.name) {
         callService(state.connection, payload.name, payload.action, {
           entity_id: payload.id,
+          ...(payload.command && { command: payload.command }),
         });
       }
     },
@@ -67,6 +72,7 @@ const createStore = () => new Vuex.Store({
 
         const connection = await createConnection({ auth });
         subscribeEntities(connection, (entities) => {
+          console.log('Entities', entities);
           commit('saveConnection', {
             address: payload.address,
             port: payload.port,
@@ -75,6 +81,8 @@ const createStore = () => new Vuex.Store({
             entities,
           });
         });
+
+        subscribeServices(connection, services => console.log('New services!', services));
       }
     },
 
@@ -98,46 +106,34 @@ const createStore = () => new Vuex.Store({
         name: 'media_player',
       });
     },
+
+    receiverAction({ commit }, payload) {
+      commit('callService', {
+        ...payload,
+        name: 'denonavr',
+      });
+    },
   },
 
   getters: {
     isLoggedIn: state => state.address !== null && state.port !== null && state.password !== null,
 
-    getApiUrl: (state) => {
-      if (state.address !== null && state.port !== null) {
-        return `https://${state.address}:${state.port}`;
-      }
-      return '';
-    },
-
     getGroupedEntities: state => (name) => {
-      // Entities in groups don't have all attributes defined on them.
-      // So we get the grouped entities from the list of normal entities.
-
-      const items = [];
-
-      if (state.entities) {
-        state.entities[`group.all_${name}`].attributes.entity_id.forEach((entity) => {
-          if (({}).hasOwnProperty.call(state.entities, entity)) {
-            return items.push(state.entities[entity]);
-          }
-          return undefined;
-        });
-      }
-
-      return items;
+      const entitiesArr = Object.entries(state.entities);
+      const entities = entitiesArr.filter(entity => entity[0].startsWith(name));
+      return entities.map(entity => entity[1]);
     },
 
-    getSwitches: (state, getters) => getters.getGroupedEntities('switches'),
+    getSwitches: (state, getters) => getters.getGroupedEntities('switch'),
 
     getLivingroomLights: (state, getters) => {
-      const lights = getters.getGroupedEntities('lights');
+      const lights = getters.getGroupedEntities('light');
       const livingRoomEntities = ['light.keuken', 'light.tafellamp'];
 
       return lights.filter(light => livingRoomEntities.includes(light.entity_id));
     },
 
-    getTrackers: (state, getters) => getters.getGroupedEntities('devices'),
+    getTrackers: (state, getters) => getters.getGroupedEntities('device'),
 
     getClimate: (state) => {
       if (state.entities) {
@@ -148,7 +144,14 @@ const createStore = () => new Vuex.Store({
 
     getMediaplayer: (state) => {
       if (state.entities) {
-        return state.entities['media_player.spotify'];
+        return state.entities['media_player.woonkamer'];
+      }
+      return undefined;
+    },
+
+    getReceiver: (state) => {
+      if (state.entities) {
+        return state.entities['media_player.denon_avr_x2000'];
       }
       return undefined;
     },

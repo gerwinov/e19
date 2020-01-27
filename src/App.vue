@@ -4,10 +4,15 @@
       <Login />
     </div>
     <div class="cols" v-else>
-      <div class="col col__45">
-        <Timer />
+      <div class="col col__45 col__vert col__spread">
+        <div class="col">
+          <Timer />
+        </div>
+        <div class="col">
+          <mediaplayer :mediaplayer="mediaplayer" :receiver="receiver"></mediaplayer>
+        </div>
       </div>
-      <div class="col col__55 col__end">
+      <div class="col col__55 col__end col__content-start">
         <div class="col col__end">
           <Switcher
             large
@@ -37,6 +42,7 @@ import { mapGetters } from 'vuex';
 import Login from './components/Login.vue';
 import Switcher from './components/Switcher.vue';
 import Timer from './components/Timer.vue';
+import Mediaplayer from './components/Mediaplayer.vue';
 
 export default {
   name: 'app',
@@ -44,6 +50,7 @@ export default {
   components: {
     Login,
     Switcher,
+    Mediaplayer,
     Timer,
   },
 
@@ -52,6 +59,8 @@ export default {
       isLoggedIn: 'isLoggedIn',
       switches: 'getSwitches',
       lights: 'getLivingroomLights',
+      mediaplayer: 'getMediaplayer',
+      receiver: 'getReceiver',
     }),
   },
 };
@@ -92,6 +101,7 @@ h1 {
 
 .cols {
   display: flex;
+  height: 100%;
 }
 
 .col {
@@ -109,6 +119,30 @@ h1 {
 
   &__end {
     justify-content: flex-end;
+  }
+
+  &__self-end {
+    align-self: flex-end;
+  }
+
+  &__vert {
+    flex-direction: column;
+  }
+
+  &__spread {
+    justify-content: space-between;
+  }
+
+  &__content-start {
+    align-content: flex-start;
+  }
+
+  &__items-center {
+    align-items: center;
+  }
+
+  &__grow {
+    flex-grow: 1;
   }
 }
 
