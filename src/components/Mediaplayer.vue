@@ -7,7 +7,7 @@
       <div class="col col__55">
         <div class="col">
           <h1 class="media-artist m-10" v-text="mediaplayer.attributes.media_artist"></h1>
-          <h2 class="media-title m-10" v-text="mediaplayer.attributes.media_title"></h2>
+          <h2 class="font-small m-10" v-text="mediaplayer.attributes.media_title"></h2>
         </div>
         <div class="col col__self-end" v-if="mediaplayerActive">
           <ActionButton
@@ -118,16 +118,9 @@ export default {
 
 <style>
   .media-artist {
-  font-family: 'IBM Plex Mono', monospace;
-  font-weight: 600;
-  color: white;
-  font-size: 20px;
-  line-height: .7em;
-}
-
-.media-title {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 14px;
-  color: white;
-}
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 600;
+    color: white;
+    font-size: 20px;
+  }
 </style>
