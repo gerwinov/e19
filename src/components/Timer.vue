@@ -4,7 +4,7 @@
       <h1 class="font-large w-100">{{ time }}</h1>
       <h2 class="font-small date w-100">{{ date }}</h2>
     </div>
-    <div class="col col__45">
+    <div class="col col__50">
       <div class="col w-100">
         <Switcher
           icon-name="timer"

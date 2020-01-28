@@ -4,7 +4,7 @@
       <h1 class="font-large w-100">{{ currentTemperature }}</h1>
       <h2 class="font-small climate-text w-100">temperatuur woonkamer</h2>
     </div>
-    <div class="col col__45">
+    <div class="col col__50">
       <div class="col w-100">
         <Switcher
           icon-name="thermo_on"
