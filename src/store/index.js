@@ -45,7 +45,7 @@ const createStore = () => new Vuex.Store({
       if (payload.id && payload.action && payload.operationMode) {
         callService(state.connection, 'climate', payload.action, {
           entity_id: payload.id,
-          operation_mode: payload.operationMode,
+          preset_mode: payload.operationMode,
         });
       }
     },

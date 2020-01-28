@@ -104,8 +104,9 @@ export default {
     outline: none;
 
     &__img {
-      margin: 5px;
-      height: 40px;
+      margin: 10px;
+      height: 30px;
+      min-width: 22px;
 
       &--large {
         height: 65px;

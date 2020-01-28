@@ -39,6 +39,7 @@ export default {
     &__img {
       margin: 10px;
       width: 22px;
+      height: 30px;
     }
 
     &__name {

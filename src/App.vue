@@ -5,8 +5,13 @@
     </div>
     <div class="cols" v-else>
       <div class="col col__55 col__vert col__spread">
-        <div class="col w-100">
-          <Timer />
+        <div>
+          <div class="col w-100">
+            <Timer />
+          </div>
+          <div class="col w-100">
+            <Climate :climate="climate" />
+          </div>
         </div>
         <div class="col">
           <mediaplayer :mediaplayer="mediaplayer" :receiver="receiver"></mediaplayer>
@@ -43,6 +48,7 @@ import { mapGetters } from 'vuex';
 import Login from './components/Login.vue';
 import Switcher from './components/Switcher.vue';
 import Timer from './components/Timer.vue';
+import Climate from './components/Climate.vue';
 import Mediaplayer from './components/Mediaplayer.vue';
 
 export default {
@@ -53,6 +59,7 @@ export default {
     Switcher,
     Mediaplayer,
     Timer,
+    Climate,
   },
 
   computed: {
@@ -62,6 +69,7 @@ export default {
       lights: 'getLivingroomLights',
       mediaplayer: 'getMediaplayer',
       receiver: 'getReceiver',
+      climate: 'getClimate',
     }),
   },
 };
@@ -114,12 +122,20 @@ h1 {
     width: 30%;
   }
 
+  &__40 {
+    width: 40%;
+  }
+
   &__45 {
     width: 45%;
   }
 
   &__55 {
     width: 55%;
+  }
+
+  &__60 {
+    width: 60%;
   }
 
   &__70 {
