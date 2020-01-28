@@ -146,6 +146,10 @@ h1 {
     width: 80%;
   }
 
+  &__90 {
+    width: 90%;
+  }
+
   &__end {
     justify-content: flex-end;
   }

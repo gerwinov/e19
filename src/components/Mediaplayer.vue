@@ -1,5 +1,5 @@
 <template>
-  <div class="col__80">
+  <div class="col__90">
     <div class="cols">
       <div class="col col__45 m-10">
         <img class="w-100" :src="mediaPicture" />
