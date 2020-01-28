@@ -4,15 +4,15 @@
       <Login />
     </div>
     <div class="cols" v-else>
-      <div class="col col__45 col__vert col__spread">
-        <div class="col">
+      <div class="col col__55 col__vert col__spread">
+        <div class="col w-100">
           <Timer />
         </div>
         <div class="col">
           <mediaplayer :mediaplayer="mediaplayer" :receiver="receiver"></mediaplayer>
         </div>
       </div>
-      <div class="col col__55 col__end col__content-start">
+      <div class="col col__45 col__end col__content-start">
         <div class="col col__end">
           <Switcher
             large
@@ -110,12 +110,24 @@ h1 {
   flex-wrap: wrap;
   align-items: flex-start;
 
-  &__55 {
-    width: 55%;
+  &__30 {
+    width: 30%;
   }
 
   &__45 {
     width: 45%;
+  }
+
+  &__55 {
+    width: 55%;
+  }
+
+  &__70 {
+    width: 70%;
+  }
+
+  &__80 {
+    width: 80%;
   }
 
   &__end {
@@ -145,6 +157,10 @@ h1 {
   &__grow {
     flex-grow: 1;
   }
+}
+
+.not-visible {
+  visibility: hidden;
 }
 
 .font-large {
