@@ -1,10 +1,10 @@
 <template>
   <div class="col__90">
     <div class="cols">
-      <div class="col col__45 m-10">
+      <div class="col col__40 m-10">
         <img class="w-100" :src="mediaPicture" />
       </div>
-      <div class="col col__55">
+      <div class="col col__60">
         <div class="col">
           <h1 class="media-artist m-10 w-100" v-text="mediaplayer.attributes.media_artist"></h1>
           <h2 class="font-small m-10" v-text="mediaplayer.attributes.media_title"></h2>

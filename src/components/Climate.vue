@@ -1,11 +1,11 @@
 <template>
-  <div class="cols w-100">
+  <div class="cols w-100 col__spread">
     <div class="col m-10 col__45 col__content-start">
       <h1 class="font-large w-100">{{ currentTemperature }}</h1>
       <h2 class="font-small climate-text w-100">temperatuur woonkamer</h2>
     </div>
-    <div class="col col__55">
-      <div class="col col__end w-100 thermo-icons">
+    <div class="col col__45">
+      <div class="col w-100">
         <Switcher
           icon-name="thermo_on"
           :actionCb="() => toggleThermostat('comfort')"
@@ -76,10 +76,6 @@ export default {
   .set-temp {
     position: relative;
     top: -20px;
-    left: 80px;
-  }
-
-  .thermo-icons {
-    margin-right: 74px;
+    left: 20px;
   }
 </style>
