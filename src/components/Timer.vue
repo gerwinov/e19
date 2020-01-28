@@ -1,10 +1,10 @@
 <template>
   <div class="cols w-100 col__spread">
-    <div class="col m-10 col__40 col__content-start">
+    <div class="col m-10 col__30 col__content-start">
       <h1 class="font-large w-100">{{ time }}</h1>
       <h2 class="font-small date w-100">{{ date }}</h2>
     </div>
-    <div class="col col__60">
+    <div class="col col__70">
       <div class="col w-100">
         <Switcher
           icon-name="timer"
