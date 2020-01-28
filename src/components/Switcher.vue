@@ -32,7 +32,11 @@ export default {
     },
     cbType: {
       type: String,
-      required: true,
+      required: false,
+    },
+    actionCb: {
+      type: Function,
+      required: false,
     },
   },
 
@@ -44,6 +48,11 @@ export default {
 
   methods: {
     toggleSwitcher() {
+      if (this.actionCb) {
+        this.actionCb();
+        return;
+      }
+
       const action = this.switchOn ? 'turn_off' : 'turn_on';
 
       this.$store.dispatch({

@@ -72,7 +72,7 @@ const createStore = () => new Vuex.Store({
 
         const connection = await createConnection({ auth });
         subscribeEntities(connection, (entities) => {
-          console.log('Entities', entities);
+          // console.log('Entities', entities);
           commit('saveConnection', {
             address: payload.address,
             port: payload.port,

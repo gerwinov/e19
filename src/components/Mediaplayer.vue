@@ -24,15 +24,24 @@
     </div>
     <div class="cols">
       <div class="col col__items-center w-100">
-          <ActionButton
+          <Switcher
             icon-name="power"
-            :actionCb="onOrOff" />
+            :actionCb="onOrOff"
+            :switcher="receiver" />
+          <img
+            class="m-10"
+            alt="volumebutton icon"
+            :src="require(`../assets/icons/volume_down.svg`)" />
           <Slider
             :min="0"
-            :max="1"
-            :defaultVal="receiver.attributes.volume_level"
+            :max="0.98"
+            :sliderVal="receiver.attributes.volume_level"
             @update="volumeUpdated"
             v-if="receiver.state === 'on'" />
+          <img
+            class="m-10"
+            alt="volumebutton icon"
+            :src="require(`../assets/icons/volume_up.svg`)" />
       </div>
     </div>
   </div>
@@ -41,6 +50,7 @@
 <script>
 import ActionButton from './ActionButton.vue';
 import Slider from './Slider.vue';
+import Switcher from './Switcher.vue';
 
 export default {
   props: {
@@ -51,6 +61,7 @@ export default {
   components: {
     ActionButton,
     Slider,
+    Switcher,
   },
 
   computed: {
@@ -98,8 +109,8 @@ export default {
       });
     },
     volumeUpdated(val) {
-      const valToSend = val * 100;
-      this.receiverAction(`/goform/formiPhoneAppVolume.xml?1+%${valToSend}f`);
+      const valToSend = Math.round((val * 100) - 80);
+      this.receiverAction(`/goform/formiPhoneAppVolume.xml?1+${valToSend}`);
     },
   },
 };

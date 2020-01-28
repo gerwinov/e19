@@ -4,9 +4,9 @@
       type="range"
       :min="min"
       :max="max"
-      :step="max / 100"
-      v-model="sliderVal"
-      @input="sliderValUpdated" />
+      :step="(max - min) / 100"
+      v-model="value"
+      @change="changed" />
   </div>
 </template>
 
@@ -15,9 +15,9 @@ export default {
   name: 'Slider',
 
   props: {
-    defaultVal: {
+    sliderVal: {
       type: Number,
-      required: false,
+      required: true,
     },
     min: {
       type: Number,
@@ -31,24 +31,20 @@ export default {
 
   data() {
     return {
-      sliderVal: null,
+      value: null,
     };
   },
 
-  computed: {
-    sliderValNum() {
-      return parseFloat(this.sliderVal);
+  watch: {
+    sliderVal(newVal) {
+      this.value = newVal;
     },
   },
 
   methods: {
-    sliderValUpdated() {
-      this.$emit('update', this.sliderValNum);
+    changed() {
+      this.$emit('update', parseFloat(this.value));
     },
-  },
-
-  mounted() {
-    this.sliderVal = this.defaultVal || 50;
   },
 };
 </script>
