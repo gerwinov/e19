@@ -31,7 +31,8 @@
           <img
             class="m-10"
             alt="volumebutton icon"
-            :src="require(`../assets/icons/volume_down.svg`)" />
+            :src="require(`../assets/icons/volume_down.svg`)"
+            v-if="receiver.state === 'on'" />
           <Slider
             :min="0"
             :max="0.98"
@@ -41,7 +42,8 @@
           <img
             class="m-10"
             alt="volumebutton icon"
-            :src="require(`../assets/icons/volume_up.svg`)" />
+            :src="require(`../assets/icons/volume_up.svg`)"
+            v-if="receiver.state === 'on'" />
       </div>
     </div>
   </div>
@@ -85,6 +87,7 @@ export default {
       }
       this.receiverAction('/goform/formiPhoneAppPower.xml?1+PowerOn');
       this.mediaAction('turn_on');
+      this.receiverAction('/goform/formiPhoneAppDirect.xml?SIMPLAY');
     },
     playOrPause() {
       if (this.mediaplayer.state === 'playing') {
