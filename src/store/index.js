@@ -2,7 +2,7 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 
 import {
-  Auth, createConnection, subscribeEntities, callService, subscribeServices,
+  Auth, createConnection, subscribeEntities, callService, // subscribeServices,
 } from 'home-assistant-js-websocket';
 
 
@@ -82,7 +82,7 @@ const createStore = () => new Vuex.Store({
           });
         });
 
-        subscribeServices(connection, services => console.log('New services!', services));
+        // subscribeServices(connection, services => console.log('New services!', services));
       }
     },
 
