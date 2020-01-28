@@ -1,23 +1,42 @@
 <template>
-  <button
-    class="switcher font-small m-10"
-    :class="[{ 'switcher--large' : large },{ 'switcher--on' : switchOn }]"
-    @click="toggleSwitcher">
-    <img
-      class="switcher__img"
-      alt="switcher icon"
-      :class="{ 'switcher__img--large' : large }"
-      :src="require(`../assets/icons/${iconName}.svg`)" />
-    <span class="switcher__name" v-if="large">{{ switcher.attributes.friendly_name }}</span>
-  </button>
+  <div>
+    <button
+      class="switcher font-small m-10"
+      :class="[{ 'switcher--large' : large },{ 'switcher--on' : switchOn }]"
+      @click="toggleSwitcher">
+      <img
+        class="switcher__img"
+        alt="switcher icon"
+        :class="{ 'switcher__img--large' : large }"
+        :src="require(`../assets/icons/${iconName}.svg`)" />
+      <span class="switcher__name" v-if="large">{{ switcher.attributes.friendly_name }}</span>
+    </button>
+    <Slider
+      :min="0"
+      :max="255"
+      :sliderVal="switcher.attributes.brightness"
+      @update="brightnessUpdated"
+      v-if="brightness" />
+  </div>
 </template>
 
 <script>
+import Slider from './Slider.vue';
+
 export default {
   name: 'Switcher',
 
+  components: {
+    Slider,
+  },
+
   props: {
     large: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+    brightness: {
       type: Boolean,
       required: false,
       default: false,
@@ -59,6 +78,17 @@ export default {
         type: this.cbType,
         id: this.switcher.entity_id,
         action,
+      });
+    },
+
+    brightnessUpdated(val) {
+      this.$store.dispatch({
+        type: 'setBrightness',
+        id: this.switcher.entity_id,
+        action: 'turn_on',
+        options: {
+          brightness: val,
+        },
       });
     },
   },

@@ -100,6 +100,13 @@ const createStore = () => new Vuex.Store({
       });
     },
 
+    setBrightness({ commit }, payload) {
+      commit('setLightOptions', {
+        ...payload,
+        name: 'light',
+      });
+    },
+
     mediaAction({ commit }, payload) {
       commit('callService', {
         ...payload,

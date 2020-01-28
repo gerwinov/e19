@@ -6,7 +6,7 @@
       </div>
       <div class="col col__55">
         <div class="col">
-          <h1 class="media-artist m-10" v-text="mediaplayer.attributes.media_artist"></h1>
+          <h1 class="media-artist m-10 w-100" v-text="mediaplayer.attributes.media_artist"></h1>
           <h2 class="font-small m-10" v-text="mediaplayer.attributes.media_title"></h2>
         </div>
         <div class="col col__self-end" v-if="mediaplayerActive">

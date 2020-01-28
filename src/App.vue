@@ -25,6 +25,7 @@
         <div class="col col__end">
           <Switcher
             large
+            brightness
             icon-name="light"
             cbType="toggleLight"
             :switcher="light"
