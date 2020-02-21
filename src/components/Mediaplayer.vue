@@ -1,6 +1,6 @@
 <template>
   <div class="col__90">
-    <div class="cols">
+    <div class="cols" v-if="mediaplayerActive">
       <div class="col col__40 m-10">
         <img class="w-100" :src="mediaPicture" />
       </div>
@@ -9,7 +9,7 @@
           <h1 class="media-artist m-10 w-100" v-text="mediaplayer.attributes.media_artist"></h1>
           <h2 class="font-small m-10" v-text="mediaplayer.attributes.media_title"></h2>
         </div>
-        <div class="col col__self-end" v-if="mediaplayerActive">
+        <div class="col col__self-end">
           <ActionButton
             icon-name="previous"
             :actionCb="() => mediaAction('media_previous_track')" />

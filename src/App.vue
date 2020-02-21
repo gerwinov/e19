@@ -13,7 +13,7 @@
             <Climate :climate="climate" />
           </div>
         </div>
-        <div class="col">
+        <div class="col w-100">
           <mediaplayer :mediaplayer="mediaplayer" :receiver="receiver"></mediaplayer>
         </div>
       </div>

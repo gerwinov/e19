@@ -131,11 +131,18 @@ const createStore = () => new Vuex.Store({
       return entities.map(entity => entity[1]);
     },
 
-    getSwitches: (state, getters) => getters.getGroupedEntities('switch'),
+    getSwitches: (state, getters) => {
+      const switches = getters.getGroupedEntities('switch');
+      return switches.sort((a, b) => {
+        if (a.attributes.friendly_name < b.attributes.friendly_name) return -1;
+        if (a.attributes.friendly_name > b.attributes.friendly_name) return 1;
+        return 0;
+      });
+    },
 
     getLivingroomLights: (state, getters) => {
       const lights = getters.getGroupedEntities('light');
-      const livingRoomEntities = ['light.keuken', 'light.tafellamp'];
+      const livingRoomEntities = ['light.keuken', 'light.tafellamp', 'light.hue_filament_bulb_1'];
 
       return lights.filter(light => livingRoomEntities.includes(light.entity_id));
     },
