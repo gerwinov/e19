@@ -62,12 +62,12 @@ export default {
 
   input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
-    height: 20px;
-    width: 20px;
+    height: 30px;
+    width: 30px;
     border-radius: 50%;
     background: #C8C8C8;
     cursor: pointer;
-    margin-top: -9px;
+    margin-top: -14px;
   }
 
   input[type=range]::-webkit-slider-runnable-track {

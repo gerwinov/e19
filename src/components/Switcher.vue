@@ -12,6 +12,7 @@
       <span class="switcher__name" v-if="large">{{ switcher.attributes.friendly_name }}</span>
     </button>
     <Slider
+      class="slider"
       :min="0"
       :max="255"
       :sliderVal="switcher.attributes.brightness"
@@ -126,5 +127,9 @@ export default {
       width: 120px;
       height: 120px;
     }
+  }
+
+  .slider {
+    margin-top: 10px;
   }
 </style>
