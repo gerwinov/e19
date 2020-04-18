@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="21px" height="21px" viewBox="0 0 21 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Page 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M19.6011002,9.515625 L11.2465329,9.515625 L11.2465329,0.984375 C11.2465329,0.426562484 10.8288048,0 10.2825444,0 C9.73628395,0 9.31855584,0.426562484 9.31855584,0.984375 L9.31855584,9.515625 L0.963988536,9.515625 C0.417728349,9.515625 0,9.94218724 0,10.5 C0,11.0578127 0.417728349,11.484375 0.963988536,11.484375 L9.31855584,11.484375 L9.31855584,20.015625 C9.31855584,20.5734377 9.73628395,21 10.2825444,21 C10.8288048,21 11.2465329,20.5734377 11.2465329,20.015625 L11.2465329,11.484375 L19.6011002,11.484375 C20.1473606,11.484375 20.5650888,11.0578127 20.5650888,10.5 C20.5650888,9.94218724 20.1473606,9.515625 19.6011002,9.515625 Z" id="path-1"></path>
+    </defs>
+    <g id="iPad-Copy-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-832.000000, -229.000000)">
+        <g id="Time" transform="translate(600.000000, 107.000000)">
+            <g id="Page-1">
+                <g id="plus" transform="translate(221.319527, 111.000000)">
+                    <g id="Page-1" transform="translate(10.772189, 11.000000)">
+                        <g id="Fill-2">
+                            <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                            <path stroke="#FFFFFF" stroke-width="8" d=""></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

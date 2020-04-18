@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="21px" height="26px" viewBox="0 0 21 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 6</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M20.2351708,13.2838919 L1.20733606,1.16885058 C0.587825172,0.788936392 0.1010666,1.04221252 0.1010666,1.75982818 L0.1010666,26.2431861 C0.1010666,26.9608021 0.587825172,27.2140776 1.20733606,26.7919507 L20.2351708,14.6769094 C20.8546824,14.2969954 20.8546824,13.6638051 20.2351708,13.2838911 L20.2351708,13.2838919 Z M2.75611331,22.7817455 L2.75611331,5.22126864 L16.5623565,14.0015071 L2.75611331,22.7817455 Z" id="path-1"></path>
+    </defs>
+    <g id="iPad-Copy-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-237.000000, -639.000000)">
+        <g id="Spotify" transform="translate(8.000000, 417.000000)">
+            <g id="play" transform="translate(216.000000, 214.000000)">
+                <g id="Page-1" transform="translate(11.000000, 7.000000)">
+                    <g id="Group-6" transform="translate(2.000000, 0.000000)">
+                        <g id="Fill-4">
+                            <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                            <path stroke="#FFFFFF" stroke-width="1" d="M19.9737831,13.7101263 L19.9666318,13.7056581 L0.945948025,1.59508561 C0.652127102,1.41490033 0.6010666,1.44196076 0.6010666,1.75982818 L0.6010666,26.2431861 C0.6010666,26.5574441 0.636996632,26.5755338 0.938797048,26.3701844 L19.973783,14.2506742 C20.2751449,14.0658647 20.2751449,13.8949357 19.9737831,13.7101263 Z M2.25611331,23.692273 L2.25611331,4.31074109 L17.4940904,14.0015071 L2.25611331,23.692273 Z"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
