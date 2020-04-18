@@ -72,7 +72,6 @@ const createStore = () => new Vuex.Store({
 
         const connection = await createConnection({ auth });
         subscribeEntities(connection, (entities) => {
-          console.log('Entities', entities);
           commit('saveConnection', {
             address: payload.address,
             port: payload.port,
@@ -161,8 +160,6 @@ const createStore = () => new Vuex.Store({
         const temp1 = parseInt(state.entities['sensor.gang_sensor_temperature'].state, 10);
         const temp2 = parseInt(state.entities['sensor.hue_motion_sensor_1_temperature'].state, 10);
 
-        console.log(temp1 + temp2);
-
         return {
           attributes: {
             current_temperature: (temp1 + temp2) / 2,
@@ -188,14 +185,11 @@ const createStore = () => new Vuex.Store({
 
     getTemperature: (state) => {
       if (state.entities) {
-        return state.entities['sensor.schiphol_temperature'].state;
-      }
-      return undefined;
-    },
-
-    getWeatherDescription: (state) => {
-      if (state.entities) {
-        return state.entities['sensor.schiphol_symbol'].state;
+        return {
+          attributes: {
+            current_temperature: parseInt(state.entities['sensor.schiphol_temperature'].state, 10),
+          },
+        };
       }
       return undefined;
     },

@@ -15,6 +15,9 @@
           <div class="col w-100">
             <Climate :climate="climateHall" room="gang" />
           </div>
+          <div class="col w-100">
+            <Climate :climate="temperatureOutside" room="buiten" />
+          </div>
         </div>
         <div class="col w-100">
           <mediaplayer :mediaplayer="mediaplayer" :receiver="receiver"></mediaplayer>
@@ -74,6 +77,7 @@ export default {
       receiver: 'getReceiver',
       climate: 'getClimate',
       climateHall: 'getClimateHall',
+      temperatureOutside: 'getTemperature',
     }),
   },
 };
@@ -86,12 +90,17 @@ export default {
   box-sizing: border-box;
 }
 
+html {
+    height  : 100%;
+    overflow: hidden;
+}
+
 body {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow: auto;
 }
 
 h1 {
