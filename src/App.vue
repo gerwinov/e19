@@ -59,10 +59,6 @@ import Timer from './components/Timer.vue';
 import Climate from './components/Climate.vue';
 import Mediaplayer from './components/Mediaplayer.vue';
 
-const bodyScrollLock = require('body-scroll-lock');
-
-const { disableBodyScroll } = bodyScrollLock;
-
 export default {
   name: 'app',
 
@@ -85,11 +81,6 @@ export default {
       climateHall: 'getClimateHall',
       temperatureOutside: 'getTemperature',
     }),
-  },
-
-  mounted() {
-    const body = document.querySelector('body');
-    disableBodyScroll(body);
   },
 };
 </script>

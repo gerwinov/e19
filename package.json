@@ -9,7 +9,6 @@
     "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "dependencies": {
-    "body-scroll-lock": "^3.0.1",
     "core-js": "^3.6.5",
     "home-assistant-js-websocket": "^4.5.0",
     "vue": "^2.6.11",
