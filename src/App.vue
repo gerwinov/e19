@@ -6,17 +6,19 @@
     <div class="cols" v-else>
       <div class="col col__55 col__vert col__spread">
         <div>
-          <div class="col w-100">
+          <div class="col w-100 mb-10">
             <Timer />
           </div>
-          <div class="col w-100">
+          <div class="col w-100 mb-10">
             <Climate :climate="climate" room="woonkamer" :showToggles="true" />
           </div>
-          <div class="col w-100">
-            <Climate :climate="climateHall" room="gang" />
-          </div>
-          <div class="col w-100">
-            <Climate :climate="temperatureOutside" room="buiten" />
+          <div class="cols">
+            <div class="col col__35">
+              <Climate :climate="climateHall" room="gang" />
+            </div>
+            <div class="col col__65 ml-20">
+              <Climate :climate="temperatureOutside" room="buiten" />
+            </div>
           </div>
         </div>
         <div class="col w-100">
@@ -223,6 +225,14 @@ h1 {
 
 .m-10 {
   margin: 10px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.ml-20 {
+  margin-left: 20px;
 }
 
 .w-100 {
