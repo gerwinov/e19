@@ -2,9 +2,9 @@
   <div class="cols w-100 col__spread">
     <div class="col m-10 col__35 col__content-start">
       <h1 class="font-large w-100">{{ currentTemperature }}</h1>
-      <h2 class="font-small climate-text w-100">temperatuur woonkamer</h2>
+      <h2 class="font-small climate-text w-100">temperatuur {{ room }}</h2>
     </div>
-    <div class="col col__65">
+    <div class="col col__65" v-if="showToggles">
       <div class="col w-100">
         <Switcher
           icon-name="thermo_on"
@@ -34,6 +34,8 @@ export default {
 
   props: {
     climate: { required: true },
+    room: { required: true },
+    showToggles: { required: false, default: false },
   },
 
   computed: {

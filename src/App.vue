@@ -10,7 +10,10 @@
             <Timer />
           </div>
           <div class="col w-100">
-            <Climate :climate="climate" />
+            <Climate :climate="climate" room="woonkamer" :showToggles="true" />
+          </div>
+          <div class="col w-100">
+            <Climate :climate="climateHall" room="gang" />
           </div>
         </div>
         <div class="col w-100">
@@ -70,6 +73,7 @@ export default {
       mediaplayer: 'getMediaplayer',
       receiver: 'getReceiver',
       climate: 'getClimate',
+      climateHall: 'getClimateHall',
     }),
   },
 };
