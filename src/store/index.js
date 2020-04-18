@@ -157,12 +157,12 @@ const createStore = () => new Vuex.Store({
 
     getClimateHall: (state) => {
       if (state.entities) {
-        const temp1 = parseInt(state.entities['sensor.gang_sensor_temperature'].state, 10);
-        const temp2 = parseInt(state.entities['sensor.hue_motion_sensor_1_temperature'].state, 10);
+        const temp1 = Number(state.entities['sensor.gang_sensor_temperature'].state);
+        const temp2 = Number(state.entities['sensor.hue_motion_sensor_1_temperature'].state);
 
         return {
           attributes: {
-            current_temperature: (temp1 + temp2) / 2,
+            current_temperature: Number(((temp1 + temp2) / 2).toFixed(1)),
           },
         };
       }
@@ -187,7 +187,7 @@ const createStore = () => new Vuex.Store({
       if (state.entities) {
         return {
           attributes: {
-            current_temperature: parseInt(state.entities['sensor.schiphol_temperature'].state, 10),
+            current_temperature: Number(state.entities['sensor.schiphol_temperature'].state),
           },
         };
       }
